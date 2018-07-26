@@ -1,0 +1,17 @@
+<h1>Specialties</h1>
+
+<p><a href='/clients'>Back to List<a/></p>
+
+<form action="/clients" method="post">
+  <label for="newClient">Add a new client</label>
+  <input id="newClient" name="newClient" type="text">
+  <select class="form-control" id="stylist" name="stylistId">
+
+    @foreach(var category in Model)
+    {
+      <option value="@category.GetId()">@category.GetName()</option>
+    }
+
+  </select>
+  <button type="submit">Submit</button>
+</form>

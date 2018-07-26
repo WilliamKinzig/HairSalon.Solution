@@ -14,6 +14,7 @@ namespace HairSalon.Controllers
         List<Client> allClients = Client.GetAll();
         return View(allClients);
     }
+/******************************************************************************/
 
     [HttpPost("/clients")]
     public ActionResult Create()
@@ -24,6 +25,7 @@ namespace HairSalon.Controllers
       return View("Index", allClients);
     }
 
+/******************************************************************************/
 
     [HttpGet("/clients/oops")]
     public ActionResult Oops()
@@ -31,6 +33,8 @@ namespace HairSalon.Controllers
 
       return View();
     }
+
+/******************************************************************************/
 
     [HttpGet("/clients/new")]
     public ActionResult CreateForm()
@@ -42,12 +46,12 @@ namespace HairSalon.Controllers
       }
       else
       {
-        return RedirectToAction("Oops");
+        return View("Oops");
+        //return View(listStylists);
       }
     }
 
-
-
+/******************************************************************************/
 
     [HttpGet("/clients/{id}/details")]
     public ActionResult Details()
@@ -56,9 +60,7 @@ namespace HairSalon.Controllers
         return View();
     }
 
-
-
-
+/******************************************************************************/
 
     [HttpGet("/clients/{id}/update")]
     public ActionResult UpdateForm(int id)
@@ -66,6 +68,8 @@ namespace HairSalon.Controllers
         Client thisClient = Client.Find(id);
         return View(thisClient);
     }
+
+/******************************************************************************/
 
     [HttpPost("/clients/{id}/update")]
     public ActionResult Update(int id)
@@ -75,6 +79,7 @@ namespace HairSalon.Controllers
         return RedirectToAction("Index");
     }
 
+/******************************************************************************/
 
     [HttpGet("/clients/{id}/delete")]
     public ActionResult Delete(int id)
@@ -84,5 +89,6 @@ namespace HairSalon.Controllers
         return RedirectToAction("Index");
     }
 
+/******************************************************************************/
   }
 }

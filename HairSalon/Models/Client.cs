@@ -15,23 +15,36 @@ namespace HairSalon.Models
       _id = Id;
       _stylist_id = styleId;
     }
+
+/******************************************************************************/
+
     public int GetClientId()
     {
       return _id;
     }
+
+/******************************************************************************/
+
     public string GetName()
     {
       return _name;
     }
+
+/******************************************************************************/
+
     public int GetStylistId()
     {
         return _stylist_id;
     }
+
+/******************************************************************************/
+
     public override int GetHashCode()
     {
       return this.GetClientId().GetHashCode();
     }
 
+/******************************************************************************/
 
     public override bool Equals(System.Object otherClient)
     {
@@ -49,6 +62,7 @@ namespace HairSalon.Models
       }
     }
 
+/******************************************************************************/
 
     public void Save()
     {
@@ -70,6 +84,7 @@ namespace HairSalon.Models
       }
     }
 
+/******************************************************************************/
 
     public static Client Find(int id)
         {
@@ -104,6 +119,7 @@ namespace HairSalon.Models
           return newClient; //make pass
         }
 
+/******************************************************************************/
 
     public static List<Client> GetAll()
     {
@@ -133,6 +149,8 @@ namespace HairSalon.Models
 
     }
 
+/******************************************************************************/
+
     public void Edit(string newName)
     {
       MySqlConnection conn = DB.Connection();
@@ -154,6 +172,7 @@ namespace HairSalon.Models
       }
     }
 
+/******************************************************************************/
 
     public void Delete()
     {
@@ -172,6 +191,8 @@ namespace HairSalon.Models
        conn.Dispose();
      }
     }
+
+/******************************************************************************/
 
     public static void DeleteAll()
     {

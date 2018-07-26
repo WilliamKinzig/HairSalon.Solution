@@ -21,12 +21,15 @@ namespace HairSalon.Tests
       //Assert
       Assert.IsInstanceOfType(indexView, typeof(ViewResult));
     }
+
+    /******************************************************************************/
+
     [TestMethod]
     public void Index_HasCorrectModelType_ClientList()
     {
       //Arrange
       ClientController controller = new ClientController();
-      IActionResult actionResult = controller.Index();
+      ActionResult actionResult = controller.Index();
       ViewResult indexView = controller.Index() as ViewResult;
 
       //Act
@@ -35,6 +38,8 @@ namespace HairSalon.Tests
       //Assert
       Assert.IsInstanceOfType(result, typeof(List<Client>));
     }
+
+    /******************************************************************************/
 
     [TestMethod]
     public void CreateForm_ReturnsCorrectView_True()
@@ -48,6 +53,8 @@ namespace HairSalon.Tests
       //Assert
       Assert.IsInstanceOfType(createFormView, typeof(ViewResult));
     }
+
+    /******************************************************************************/
 
     [TestMethod]
     public void CreateForm_HasCorrectModelType_SylistList()

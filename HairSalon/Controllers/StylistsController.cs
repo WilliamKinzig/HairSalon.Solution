@@ -7,6 +7,7 @@ namespace HairSalon.Controllers
 {
   public class StylistController : Controller
   {
+/******************************************************************************/
 
     [HttpGet("/stylists")]
     public ActionResult Index()
@@ -16,6 +17,7 @@ namespace HairSalon.Controllers
         return View(stylistList);
     }
 
+/******************************************************************************/
 
     [HttpGet("/stylists/new")]
     public ActionResult CreateForm()
@@ -24,6 +26,7 @@ namespace HairSalon.Controllers
       return View();
     }
 
+/******************************************************************************/
 
     [HttpPost("/stylists")]
     public ActionResult Create()
@@ -34,6 +37,7 @@ namespace HairSalon.Controllers
       return View("Index", stylistList);
     }
 
+/******************************************************************************/
 
     [HttpGet("/stylists/{id}")]
     public ActionResult Details(int id)
@@ -43,12 +47,16 @@ namespace HairSalon.Controllers
         return View(item);
     }
 
+/******************************************************************************/
+
     [HttpGet("/stylists/{id}/update")]
     public ActionResult UpdateForm(int id)
     {
         Stylist thisStylist = Stylist.Find(id);
         return View(thisStylist);
     }
+
+/******************************************************************************/
 
     [HttpPost("/stylists/{id}/update")]
     public ActionResult Update(int id)
@@ -58,6 +66,8 @@ namespace HairSalon.Controllers
         return RedirectToAction("Index");
     }
 
+/******************************************************************************/
+
     [HttpGet("/stylists/{id}/delete")]
     public ActionResult Delete(int id)
     {
@@ -65,6 +75,8 @@ namespace HairSalon.Controllers
         thisStylist.Delete();
         return RedirectToAction("Index");
     }
+
+/******************************************************************************/
     // [HttpPost("/stylists/delete")]
     // public ActionResult DeleteAll()
     // {
