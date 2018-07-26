@@ -1,0 +1,7 @@
+<h1>Client Update</h1>
+<p><a href='/clients'>Back<a/></p>
+<form action="/clients/@Model.GetClientId()/update" method="post">
+  <label for="updateClient">Update client name:</label>
+  <input id="updateClient" name="updateClient" type="text" value="@Model.GetName()">
+  <button type="submit">Submit</button>
+</form>

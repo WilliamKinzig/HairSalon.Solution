@@ -1,0 +1,19 @@
+<h1>Stylists</h1>
+<p><a href='/stylists/new'>Add Stylist<a/></p>
+<p><a href='/'>Home<a/></p>
+
+
+<table>
+
+
+  @foreach(var category in Model)
+  {
+  <tr>
+    <td><a href="/stylists/@category.GetId()">@category.GetName()</a></td>
+    <td></td>
+    <td><a href="/stylists/@category.GetId()/update">Edit</a></td>
+    <td></td>
+    <td><a href="/stylists/@category.GetId()/delete">Delete</a></td>
+  </tr>
+  }
+</table>
